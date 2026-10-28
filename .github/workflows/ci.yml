@@ -37,10 +37,8 @@ jobs:
 
       # 4. Run API tests
       - name: Run tests
-        run: |
-          pytest -v
+        run: python -m pytest -v test/
 
       # 5. Build Docker image
       - name: Build Docker image
-        run: |
-          docker build -t diabetes-api:ci .
+        run: docker build -t diabetes-api:${{github.sha}} .

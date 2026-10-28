@@ -10,11 +10,11 @@ from pydantic import BaseModel, Field
 app = FastAPI(
     title="Diabetes Prediction API",
     description="Predict diabetes risk using a trained ML model",
-    version="1.0.0",
+    version="1.0.0"
 )
 
 # Load the saved model artifact
-MODEL_PATH = Path(__file__).parent / "model.joblib"
+MODEL_PATH = Path(__file__).parent / "models" / "model.joblib"
 
 if not MODEL_PATH.exists():
     raise FileNotFoundError(f"Model file not found: {MODEL_PATH}")
